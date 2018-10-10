@@ -29,8 +29,9 @@ public class NetworkActivityIndicator: NSObject {
                 self.activitiesCount = 0
             }
           
-            UIApplication.shared.isNetworkActivityIndicatorVisible = (self.activitiesCount > 0)
-
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = (self.activitiesCount > 0)
+            }
         }
     }
 }
